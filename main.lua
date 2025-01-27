@@ -53,7 +53,7 @@ function mod:OnTearUpdate(tear)
         -- Заменяем анимацию всплеска
         local explosionSprite = explosion:GetSprite()
         explosionSprite:Load("gfx/star_explosion.anm2", true) -- Загрузка анимации всплеска
-        explosionSprite:ReplaceSpritesheet(0, "gfx/star_explosion.png") -- Заменяем графику
+        explosionSprite:ReplaceSpritesheet(0, "gfx/star_explosion.png") -- Заменяем графику 
         explosionSprite:LoadGraphics()
         explosionSprite:Play("Idle", true)
 
