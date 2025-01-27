@@ -1,0 +1,8 @@
+<sounds root = "sfx/">
+    <sound name = "Rain">
+    <sample weight = "1" path = "falling.wav" />
+    </sound>
+    <sound name = "Falling Rain">
+    <sample weight = "1" path = "falling_rain.wav" />
+    </sound>
+</sounds>

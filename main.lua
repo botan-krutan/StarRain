@@ -1,6 +1,8 @@
 -- Регистрация мода
 local mod = RegisterMod("StarRainMod", 1)
-
+local sfx = SFXManager()
+local SOUND_RAIN = Isaac.GetSoundIdByName("Rain")
+local SOUND_RAINFALL = Isaac.GetSoundIdByName("Falling Rain")
 -- Получаем ID предмета Star Rain
 local starRainId = Isaac.GetItemIdByName("Star Rain")
 -- Частота появления особых слез
@@ -17,7 +19,7 @@ function mod:OnTearInit(tear)
         tear:GetSprite():ReplaceSpritesheet(1, "gfx/star.png")
         tear:GetSprite():LoadGraphics()
         tear:GetSprite():Play("Idle", true)
-
+        sfx:Play(SOUND_RAIN, 1,1,false, math.random(9, 12)/10)
         -- Устанавливаем кастомный флаг, чтобы знать, что слеза принадлежит Star Rain
         tear:GetData().IsStarTear = true
 
@@ -70,6 +72,7 @@ function mod:StarRains(ent, amount, flags, src, frames)
         local roomWidth = room:GetGridWidth() * 40 -- Rough estimate
          -- Just above the screen 
          local dir = (math.random(2) == 1 and -1 or 1) * 8
+         sfx:Play(SOUND_RAINFALL) 
         for i = 1, 15, 1 do
             local xPos = centerX + math.random(-roomWidth / 2, roomWidth / 2)
             local yPos = room:GetTopLeftPos().Y - math.random(0, 50) 
@@ -83,6 +86,7 @@ function mod:StarRains(ent, amount, flags, src, frames)
             tear:GetSprite():LoadGraphics()
             tear:GetSprite():Play("Idle", true)
             tear:ToTear().Height = -100
+
         end
         -- Random X position within room bounds
 
