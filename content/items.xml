@@ -1,0 +1,3 @@
+<items gfxroot="gfx/items/" version = "1">
+    <passive id="1" name="Star Rain" gfx="starrain.png" description="The star rain starts" quality="3"/>
+</items>
