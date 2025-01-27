@@ -5,4 +5,7 @@
     <sound name = "Falling Rain">
     <sample weight = "1" path = "falling_rain.wav" />
     </sound>
+        <sound name = "Break">
+    <sample weight = "1" path = "break.wav" />
+    </sound>
 </sounds>

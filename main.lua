@@ -3,6 +3,7 @@ local mod = RegisterMod("StarRainMod", 1)
 local sfx = SFXManager()
 local SOUND_RAIN = Isaac.GetSoundIdByName("Rain")
 local SOUND_RAINFALL = Isaac.GetSoundIdByName("Falling Rain")
+local BREAK = Isaac.GetSoundIdByName("Break")
 -- Получаем ID предмета Star Rain
 local starRainId = Isaac.GetItemIdByName("Star Rain")
 -- Частота появления особых слез
@@ -58,7 +59,7 @@ function mod:OnTearUpdate(tear)
         explosionSprite:ReplaceSpritesheet(0, "gfx/star_explosion.png") -- Заменяем графику 
         explosionSprite:LoadGraphics()
         explosionSprite:Play("Idle", true)
-
+        sfx:Play(BREAK) 
         -- Настраиваем длительность эффекта всплеска
         --explosion:ToEffect():SetTimeout(30)
 
