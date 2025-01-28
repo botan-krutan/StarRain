@@ -1,3 +1,4 @@
 <items gfxroot="gfx/items/" deathanm2="gfx/death_items.anm2" version = "1">
     <passive id="1" name="Star Rain" gfx="starrain.png" description="Let's look at the stars" quality="3"/>
+    <passive id="2" name="Isaac Injection" gfx="Injection.png" description="There can never be too many Isaacs" quality="3" />
 </items>
