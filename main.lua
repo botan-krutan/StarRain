@@ -41,7 +41,7 @@ end
 -- Обработка разрушения слезы
 function mod:OnTearUpdate(tear)
     -- Проверяем, принадлежит ли слеза Star Rain и завершает ли она полёт
-    if tear:GetData().IsStarTear and tear:IsDead() then
+    if tear:GetData().IsStarTear and tear:IsDead()then
         tear:Remove()
         -- Создаем эффект всплеска на месте разрушения слезы
         local explosion = Isaac.Spawn(
@@ -62,6 +62,7 @@ function mod:OnTearUpdate(tear)
         sfx:Play(BREAK) 
         -- Настраиваем длительность эффекта всплеска
         --explosion:ToEffect():SetTimeout(30)
+    
 
         print("Star tear exploded with custom animation!") -- Для отладки
     end
